@@ -1,0 +1,28 @@
+.bookDetails{
+    margin: 80px 200px;
+}
+.bookDetails img{
+    width:300px;
+    height: 250px;
+}
+.bookDetails .details{
+    font-size: 14px;
+    color: #fff5f5;
+    letter-spacing: 1.05px;
+    line-height: 1.5;
+}
+
+.bookDetails button{
+    display: inline-block;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.btnBorrow{
+    background-color: blanchedalmond;
+}
+.btnReturn{
+    background-color: orangered;
+    margin-left: 20px;
+}

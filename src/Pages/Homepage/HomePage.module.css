@@ -1,0 +1,29 @@
+.section{
+    height: 90vh;
+    background-color:#862e9c;
+    background-image:url("/public/lady-reading.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right top;
+   
+       
+}
+
+.section .contents{
+    width: 400px;
+    transform: translate(200px, 100px);
+}
+.section .contents h1{
+    font-size: 32px;
+    color: #b68c8c;
+}
+
+.section .contents button{
+    margin-top: 32px;
+    padding: 16px;
+    border: none;
+    background-color: #862e9c;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}

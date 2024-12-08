@@ -1,0 +1,166 @@
+{
+  "books": [
+    {
+      "title": "Call of the sirens",
+      "author": [
+        "K.B Benson"
+      ],
+      "price": "350",
+      "details": "A captivating tale of myth and mystery as a young hero faces the alluring but deadly call of the sirens.",
+      "availability": {
+        "isAvailable": true,
+        "quantity": "5"
+      },
+      "photo": "/booksPhoto/call-of-the-sirens.jpg",
+      "id": "7392"
+    },
+    {
+      "title": "Hanging house",
+      "author": [
+        "Dean Rasmussen"
+      ],
+      "price": "520",
+      "details": "A gripping ghost story set in a house with a tragic past and chilling secrets.",
+      "availability": {
+        "isAvailable": true,
+        "quantity": "18"
+      },
+      "photo": "/booksPhoto/hanging-house.jpg",
+      "id": "7210"
+    },
+    {
+      "title": "How to be perfect",
+      "author": [
+        "Kathians Brands"
+      ],
+      "price": "450",
+      "details": "A motivational guide offering practical steps to achieving personal and professional excellence.",
+      "availability": {
+        "isAvailable": true,
+        "quantity": "1"
+      },
+      "photo": "/booksPhoto/how-to-be-perfect.jpg",
+      "id": "7101"
+    },
+    {
+      "title": "Stratagising",
+      "author": [
+        "Jen Wang"
+      ],
+      "price": "900",
+      "details": "An insightful book on effective strategies for overcoming challenges in business and life.",
+      "availability": {
+        "isAvailable": false,
+        "quantity": "0"
+      },
+      "photo": "/booksPhoto/stratagising.jpg",
+      "id": "7000"
+    },
+    {
+      "title": "The Hobbit",
+      "author": [
+        "J.R.R. Tolkien"
+      ],
+      "price": "250",
+      "details": "A timeless fantasy classic about a hobbit's epic adventure through Middle-earth.",
+      "availability": {
+        "isAvailable": true,
+        "quantity": "4"
+      },
+      "photo": "/booksPhoto/the-hobbit.jpg",
+      "id": "7894"
+    },
+    {
+      "title": "The past is rising",
+      "author": [
+        "Kathryn Waters"
+      ],
+      "price": "750",
+      "details": "A poignant historical fiction that explores how the past shapes the present and future.",
+      "availability": {
+        "isAvailable": true,
+        "quantity": "12"
+      },
+      "photo": "/booksPhoto/the-past-is-rising.jpg",
+      "id": "7153"
+    },
+    {
+      "title": "The shot to die for",
+      "author": [
+        "M.H. Sergent"
+      ],
+      "price": "640",
+      "details": "A suspense-filled mystery revolving around a photographer whose shots capture more than expected.",
+      "availability": {
+        "isAvailable": true,
+        "quantity": "2"
+      },
+      "photo": "/booksPhoto/the-shot-to-die-for.jpg",
+      "id": "7069"
+    },
+    {
+      "title": "The young elementals",
+      "author": [
+        "Kimbra Swain"
+      ],
+      "price": "800",
+      "details": "A thrilling fantasy about young heroes harnessing the powers of the elements to save their world.",
+      "availability": {
+        "isAvailable": true,
+        "quantity": "7"
+      },
+      "photo": "/booksPhoto/the-young-elementals.jpg",
+      "id": "7337"
+    }
+  ],
+  "Users": [
+    {
+      "id": "1733249511607",
+      "name": "Muhammad",
+      "email": "mmlawan34@gmail.com",
+      "password": "shamsu",
+      "borrowedBooks": [],
+      "role": "member"
+    },
+    {
+      "id": "1733252246397",
+      "name": "kaleefa",
+      "email": "llmuhd@gmail.com",
+      "password": "345666",
+      "borrowedBooks": [],
+      "role": "member"
+    },
+    {
+      "id": 1733479421222,
+      "name": "Muhammad",
+      "email": "mlawan252@gmail.com",
+      "password": "2345",
+      "borrowedBooks": [],
+      "role": "member"
+    },
+    {
+      "id": 1733479761970,
+      "name": "llmuhd",
+      "email": "llmuhammad@yahoo.com",
+      "password": "Lawan",
+      "borrowedBooks": [],
+      "role": "member"
+    },
+    {
+      "id": 1733480349334,
+      "name": "Shamsu",
+      "email": "shamsulawan@gmail.com",
+      "password": "12345",
+      "borrowedBooks": [],
+      "role": "member"
+    },
+    {
+      "id": 1733480871119,
+      "name": "Muhammad",
+      "email": "aminaywakili@gmail.com",
+      "password": "234",
+      "borrowedBooks": [],
+      "role": "member"
+    }
+  ]
+}

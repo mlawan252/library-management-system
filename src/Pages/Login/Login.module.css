@@ -1,0 +1,22 @@
+.bookIcon img{
+    width: 350px;
+    height: 400px;
+}
+.container{
+    background-color: #f3d9fa;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.container form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.container form input{
+    padding: 4px 12px;
+    
+}

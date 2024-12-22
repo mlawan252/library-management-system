@@ -9,9 +9,16 @@ function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {createUser, checkUser} = useAuth()
+  const {createUser, users} = useAuth()
+
+  function findUser(email){
+    const result = users?.map(user=>user.email).includes(email)
+    return result;
+  }
+  
   function handleSubmit(e) {
     e.preventDefault();
+    console.log(users)
     const newUser = {
       id:Date.now(),
       name,
@@ -20,17 +27,17 @@ function Signup() {
       borrowedBooks:[],
       role:"member"
     };
-    if(newUser.name === "" && newUser.email === "") {
+    if(name === "" || email === "" || password === "") {
       alert("please kindly signup by entering your details 😣🙄")
       return
     }
-    if(checkUser(newUser)) {
-      alert(`${newUser.name} already exist`)
+    if(findUser(email)) {
+      alert(`${email} already exist`)
       return
     }
     
     createUser(newUser)
-    alert(`${newUser.name} added sucessfully`);
+    alert(`${name} (${email}) added sucessfully`);
     navigate("/login")
     setName("");
     setEmail("");

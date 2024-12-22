@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 
 const bookContext = createContext();
-const initialState = { books: [], isLoading: false, error: "", currentBook:{} };
+const initialState = { books: [], isLoading: false, error: "", currentBook:{}, searchedBook:"" };
 
 function reducer(state, action) {
   switch (action.type) {
@@ -12,7 +12,9 @@ function reducer(state, action) {
     case "rejected":
       return { ...state, isLoading: false, error: action.payLoad };
     case "book/loaded":
-      return {...state,  isLoading:false, currentBook:action.payLoad}
+      return {...state,  isLoading:false, currentBook:action.payLoad};
+      case "book/searched":
+        return {...state,  searchedBook:action.payLoad}
     default:
       throw new Error("Unknown action");
   }
@@ -44,12 +46,12 @@ function BookProvider({children}) {
     }
   
 
-  const [{ books, isLoading, error, currentBook }, dispatch] = useReducer(
+  const [{ books, isLoading, error, currentBook, searchedBook }, dispatch] = useReducer(
     reducer,
     initialState
   );
   return (
-    <bookContext.Provider value={{ books, isLoading, error, currentBook, getBook }}>
+    <bookContext.Provider value={{ books, isLoading, error, currentBook, getBook,searchedBook,dispatch }}>
       {children}
     </bookContext.Provider>
   );

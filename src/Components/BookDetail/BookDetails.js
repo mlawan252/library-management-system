@@ -8,7 +8,7 @@ import { useState } from "react";
 function BookDetails() {
   const { id } = useParams();
   const { getBook, isLoading, currentBook } = useBook();
-  const { currentUser, dispatch } = useAuth();
+  const { currentUser, updateUser, dispatch } = useAuth();
   const [isBorrowed, setIsBorrowed] = useState(false);
 
   const { title, details, author } = currentBook;
@@ -21,18 +21,15 @@ function BookDetails() {
 
   function handleBorrowBook(id) {
     dispatch({ type: "borrowed/book", payLoad: id });
-   
   }
   useEffect(
     function () {
-      if (currentUser.borrowedBooks.includes(currentBook.id)){
-        setIsBorrowed(true);
-      }
-    else{
-        setIsBorrowed(false)
-    } 
+      setIsBorrowed(
+        currentUser.borrowedBooks.includes(currentBook.id) ? true : false
+      );
+      updateUser(currentUser.id, currentUser.borrowedBooks)
     },
-    [currentUser.borrowedBooks, currentBook.id]
+    [currentUser.borrowedBooks, currentBook.id, updateUser, currentUser.id]
   );
   if (isLoading) return <Loader />;
   return (
@@ -49,7 +46,16 @@ function BookDetails() {
       >
         Borrow this book
       </button>
-      <button className={styles.btnReturn}>Return this book</button>
+      {isBorrowed && (
+        <button
+          className={styles.btnReturn}
+          onClick={() =>
+            dispatch({ type: "return/book", payLoad: currentBook.id })
+          }
+        >
+          Return this book
+        </button>
+      )}
     </div>
   );
 }

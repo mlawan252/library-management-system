@@ -113,7 +113,7 @@
       "id": "7337"
     }
   ],
-  "Users": [
+  "users": [
     {
       "id": "1733249511607",
       "name": "Muhammad",
@@ -131,15 +131,19 @@
       "role": "member"
     },
     {
-      "id": 1733479421222,
+      "id": "1733479421222",
       "name": "Muhammad",
       "email": "mlawan252@gmail.com",
       "password": "2345",
-      "borrowedBooks": [],
+      "borrowedBooks": [
+        "7392",
+        "7101",
+        "7000"
+      ],
       "role": "member"
     },
     {
-      "id": 1733479761970,
+      "id": "1733479761970",
       "name": "llmuhd",
       "email": "llmuhammad@yahoo.com",
       "password": "Lawan",
@@ -147,7 +151,7 @@
       "role": "member"
     },
     {
-      "id": 1733480349334,
+      "id": "1733480349334",
       "name": "Shamsu",
       "email": "shamsulawan@gmail.com",
       "password": "12345",
@@ -155,10 +159,34 @@
       "role": "member"
     },
     {
-      "id": 1733480871119,
+      "id": "1733687688644",
+      "name": "Lawan",
+      "email": "mlawan252@gmail.com",
+      "password": "234534",
+      "borrowedBooks": [],
+      "role": "member"
+    },
+    {
+      "id": 1733854251197,
+      "name": "Sulaiman",
+      "email": "sulaiman123@gmail.com",
+      "password": "9000",
+      "borrowedBooks": [],
+      "role": "member"
+    },
+    {
+      "id": 1733854354486,
       "name": "Muhammad",
+      "email": "mmlawan340@gmail.com",
+      "password": "9000",
+      "borrowedBooks": [],
+      "role": "member"
+    },
+    {
+      "id": 1733854866011,
+      "name": "Amina",
       "email": "aminaywakili@gmail.com",
-      "password": "234",
+      "password": "2000",
       "borrowedBooks": [],
       "role": "member"
     }

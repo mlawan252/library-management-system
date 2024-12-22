@@ -7,17 +7,14 @@ import PageNotFound from "./Components/PageNotFound";
 import Main from "./Components/MainApp/MainApp";
 import { BookProvider } from "./context/BooksContext";
 import BookDetails from "./Components/BookDetail/BookDetails";
-import Nav from "./Components/Nav/Nav";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./Pages/ProtectedRoute";
 
 function App() {
   return (
-    
     <AuthProvider>
       <BookProvider>
         <BrowserRouter>
-        
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="books" element={<ProtectedRoute><Main /></ProtectedRoute>}>
@@ -27,7 +24,6 @@ function App() {
             <Route path="signup" element={<Signup />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
-        
         </BrowserRouter>
       </BookProvider> 
     </AuthProvider>

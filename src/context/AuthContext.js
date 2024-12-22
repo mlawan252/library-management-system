@@ -24,6 +24,14 @@ function reducer(state, action) {
           borrowedBooks: [...state.currentUser.borrowedBooks, action.payLoad],
         },
       };
+    case "return/book":
+      return {
+        ...state,
+        currentUser: {
+          ...state.currentUser,
+          borrowedBooks: state.currentUser.borrowedBooks.filter(id => id !== action.payLoad),
+        },
+      };
     case "login":
       return { ...state, isAuthenticated: true, currentUser: action.payLoad };
     case "logout":
@@ -33,17 +41,19 @@ function reducer(state, action) {
   }
 }
 function AuthProvider({ children }) {
+  const [{ email, password, isAuthenticated, currentUser, users }, dispatch] =
+    useReducer(reducer, initialState);
   useEffect(function () {
     async function getUsers() {
-      const res = await fetch("http://localhost:9000/Users");
+      const res = await fetch("http://localhost:9000/users");
       const data = await res.json();
       dispatch({ type: "data/loaded", payLoad: data });
     }
     getUsers();
-  }, []);
+  }, [users]);
 
   async function createUser(newUser) {
-    const res = await fetch("http://localhost:9000/Users", {
+    const res = await fetch("http://localhost:9000/users", {
       method: "POST",
       body: JSON.stringify(newUser),
       headers: {
@@ -53,16 +63,21 @@ function AuthProvider({ children }) {
     const data = await res.json();
     dispatch({ type: "data/loaded", payLoad: data });
   }
-  // async function getUser(id){
-  //   dispatch({type:"loading"})
-  //   try {
-  //     const res = await fetch(`http://localhost:9000/Users/${id}`);
-  //     const data = await res.json();
-  //     dispatch({ type: "login", payLoad: data });
-  //   } catch {
-  //     dispatch({ type: "rejected", payLoad: "Unable to fetch book" });
-  //   }
-  // }
+  async function updateUser(userId, borrowedBooks) {
+    try {
+      await fetch(`http://localhost:9000/users/${userId}`, {
+        method: "PATCH",
+        body: JSON.stringify({ borrowedBooks }),
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+    } catch (error) {
+      console.error("Failed to update user's borrowed books:", error);
+    }
+  }
+  
+  
   function checkUser(email, password) {
     const user = users?.filter(
       (user) => user.email === email && user.password === password
@@ -70,9 +85,6 @@ function AuthProvider({ children }) {
     dispatch({ type: "login", payLoad: user[0] });
     return user[0];
   }
-
-  const [{ email, password, isAuthenticated, currentUser, users }, dispatch] =
-    useReducer(reducer, initialState);
   return (
     <authContext.Provider
       value={{
@@ -82,6 +94,7 @@ function AuthProvider({ children }) {
         users,
         currentUser,
         createUser,
+        updateUser,
         checkUser,
         dispatch,
       }}

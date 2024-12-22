@@ -17,3 +17,12 @@
     cursor: pointer;
     background-color: aliceblue;
 }
+.booksBorrowed{
+    color: aliceblue;
+    font-weight: 800;
+
+}
+.booksBorrowed span{
+    font-size: 20px;
+    font-family: 'Trebuchet MS';
+}

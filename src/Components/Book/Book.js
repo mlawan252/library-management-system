@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 import styles from "./Book.module.css";
 
-
 function Book({ book }) {
-  const { title, photo, author, id, } = book;
-  
-  
+  const { title, photo, author, id } = book;
+
   return (
     <li className={styles.book}>
       <Link to={`${id}?title=${title}`}>
@@ -14,7 +12,6 @@ function Book({ book }) {
         <p>
           <strong>{author.map((a) => a)}</strong>
         </p>
-        {/* <p>{book.price}</p> */}
       </Link>
     </li>
   );
